@@ -1,0 +1,45 @@
+package com.lti.dao;
+
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.TypedQuery;
+
+import com.lti.model.Employee;
+import com.lti.utils.JpaUtils;
+
+public class EmployeeDaoImpl implements EmployeeDao {
+	
+	private EntityManager entityManager;
+
+	public EmployeeDaoImpl() {
+		entityManager = JpaUtils.getEntityManager();
+	}
+
+	@Override
+	public int createEmployee(Employee employee) {
+		entityManager.persist(employee);
+		return 1;
+	}
+
+	@Override
+	public List<Employee> readAllEmployees() {
+		String jpql = "From Employee";
+		TypedQuery<Employee> tquery = entityManager.createQuery(jpql, Employee.class);
+		List<Employee> list = tquery.getResultList();
+		return list;
+	}
+
+	@Override
+	public int deleteEmployee(int employeeId) {
+		
+		return 0;
+	}
+
+	@Override
+	public Employee updateEmployee(Employee employee) {
+		
+		return null;
+	}
+
+}

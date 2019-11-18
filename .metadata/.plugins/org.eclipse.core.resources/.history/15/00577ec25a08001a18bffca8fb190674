@@ -1,0 +1,31 @@
+package com.lti.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.lti.model.Employee;
+import com.lti.service.EmployeeService;
+
+@RestController
+@RequestMapping(path="employees")
+public class EmployeeRestController {
+	@Autowired
+	private EmployeeService service;
+	
+	@RequestMapping(method=RequestMethod.GET)
+	public List<Employee> viewAllEmployee(){
+		List<Employee> list = service.findAllEmployees();
+		return list;
+	}
+	
+	@RequestMapping(path="{empId}", method=RequestMethod.GET)                 
+	public Employee viewEmployeeById(int employeeId){
+		return service.findEmployeeById(employeeId);
+		
+	}
+
+}

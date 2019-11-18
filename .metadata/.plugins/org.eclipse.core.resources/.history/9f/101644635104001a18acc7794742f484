@@ -1,0 +1,11 @@
+package com.lti.dao;
+
+import com.lti.model.Employee;
+
+public class EmployeeDaoImpl implements EmployeeDao {
+
+	public boolean createEmployee(Employee employee) {
+		return false;
+	}
+
+}

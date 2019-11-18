@@ -1,0 +1,18 @@
+package com.lti.config;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+
+import com.lti.model.Users;
+
+@Configuration
+@ComponentScan(basePackages={"com.lti"})
+public class AppConfig {
+	@Bean
+	public Users getUser(){
+		Users user = new Users();
+		return user;
+	}
+
+}

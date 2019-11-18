@@ -1,0 +1,6 @@
+package com.lti.service;
+
+public interface EmployeeService {
+	public boolean addEmployee(Employee employee);
+
+}

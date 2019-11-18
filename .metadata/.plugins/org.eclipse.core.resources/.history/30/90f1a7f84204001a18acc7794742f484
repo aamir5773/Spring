@@ -1,0 +1,13 @@
+package com.lti.ui;
+
+import com.lti.model.Employee;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		Employee employee = new Employee(101, "Aamir", 100000);
+		
+	}
+
+}

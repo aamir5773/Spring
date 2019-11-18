@@ -1,0 +1,17 @@
+package com.lti.config;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+import com.lti.model.Employee;
+
+@Configuration
+public class AppConfig {
+	
+	@Bean(name="employee")
+	public Employee getEmployee(){
+		Employee emp = new Employee();
+		return emp;
+	}
+
+}

@@ -1,0 +1,12 @@
+package com.lti.service;
+
+import com.lti.model.Employee;
+
+public class EmployeeServiceImpl implements EmployeeService {
+
+	private EmployeeService service;
+	public boolean addEmployee(Employee employee) {
+		return false;
+	}
+
+}

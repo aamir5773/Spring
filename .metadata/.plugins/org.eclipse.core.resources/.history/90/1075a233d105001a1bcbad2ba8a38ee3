@@ -1,0 +1,17 @@
+package com.lti.dao;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import org.springframework.jdbc.core.RowMapper;
+
+public class UserRowMapper implements RowMapper<Users> {
+
+	public Users mapRow(ResultSet rs, int arg1) throws SQLException {
+		
+		return null;
+	}
+	
+	
+
+}

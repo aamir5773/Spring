@@ -1,0 +1,42 @@
+package com.lti.dao;
+
+import java.util.List;
+
+import javax.persistence.EntityManager;
+
+import com.lti.model.Employee;
+
+public class EmployeeDaoImpl implements EmployeeDao {
+	
+	private EntityManager entityManager;
+
+	
+	
+	public EmployeeDaoImpl() {
+	}
+
+	@Override
+	public int createEmployee(Employee employee) {
+		
+		return 0;
+	}
+
+	@Override
+	public List<Employee> readAllEmployees() {
+		
+		return null;
+	}
+
+	@Override
+	public int deleteEmployee(int employeeId) {
+		
+		return 0;
+	}
+
+	@Override
+	public Employee updateEmployee(Employee employee) {
+		
+		return null;
+	}
+
+}

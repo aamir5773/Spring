@@ -1,0 +1,33 @@
+package com.lti.dao;
+
+import java.util.List;
+
+import org.springframework.jdbc.core.JdbcTemplate;
+
+import com.lti.model.Employee;
+
+public class EmployeeDaoimpl implements EmployeeDao {
+	
+	private JdbcTemplate template;
+
+	public int createEmployee(Employee employee) {
+		
+		return 0;
+	}
+
+	public List<Employee> readAllEmployees() {
+		
+		return null;
+	}
+
+	public int deleteEmployee(int employeeId) {
+		
+		return 0;
+	}
+
+	public Employee updateEmployee(Employee employee) {
+		
+		return null;
+	}
+
+}

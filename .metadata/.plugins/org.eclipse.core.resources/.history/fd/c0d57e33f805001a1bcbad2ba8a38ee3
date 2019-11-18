@@ -1,0 +1,26 @@
+package com.lti.config;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+
+import com.lti.model.Employee;
+
+@Configuration
+@ComponentScan(basePackages={"com.lti"}) // Used to locate service and dao bean
+public class AppConfig {
+	
+	@Bean(name="employee")
+	public Employee getEmployee(){
+		Employee emp = new Employee();
+		return emp;
+	}
+	
+	
+	public Jdbctemplate getJdbcTemplate(){
+		JdbcTemplate template = new JdbcTemplate();
+		return template;
+		
+	}
+
+}

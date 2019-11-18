@@ -1,0 +1,19 @@
+package com.lti;
+
+import org.apache.catalina.core.ApplicationContext;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class Main {
+
+	public static void main(String[] args) {
+		ApplicationContext context = SpringApplication.run(Main.class, args);
+		String beans[] = context.getBeanDefinitionNames();
+		for(String bean : beans){
+			System.out.println(bean);
+		}
+
+	}
+
+}

@@ -1,0 +1,48 @@
+package com.lti.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.lti.model.Employee;
+import com.lti.service.EmployeeService;
+
+@RestController
+@RequestMapping(path="employees")
+public class EmployeeRestController {
+	@Autowired
+	private EmployeeService service;
+	
+	@RequestMapping(method=RequestMethod.GET)
+	public List<Employee> viewAllEmployee(){
+		List<Employee> list = service.findAllEmployees();
+		return list;
+	}
+	
+	@RequestMapping(path="{empId}", method=RequestMethod.GET)                 
+	public Employee viewEmployeeById(@PathVariable("empid") int employeeId){
+		return service.findEmployeeById(employeeId);
+	}
+	
+	public List<Employee> deleteEmployee(int employeeId){
+		boolean result = service.removeEmployee(employeeId);
+		return service.findAllEmployees();
+	}
+	
+	public List<Employee> addEmployee(Employee employee){
+		boolean result = service.addEmployee(employee);
+		return service.findAllEmployees();
+
+	}
+	
+	public List<Employee> updateEmployee(Employee employee){
+		 Employee result = service.modifyEmployee(employee);
+			return service.findAllEmployees();
+
+	}
+
+}

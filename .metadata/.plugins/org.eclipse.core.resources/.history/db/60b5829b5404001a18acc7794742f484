@@ -1,0 +1,23 @@
+package com.lti.ui;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.lti.model.Employee;
+import com.lti.service.EmployeeService;
+
+public class Main {
+
+	public static void main(String[] args) {
+		ApplicationContext context = new ClassPathXmlApplicationContext("spring-config.xml");
+		Employee employee = new context.getBean("employee", Employee.class);
+		
+		EmployeeService  service = context.getBean(service, EmployeeService.class);
+		boolean result = service.addEmployee(employee);
+		if(result){
+			System.out.println("Employee added successfully in in- memory database");
+		}
+
+	}
+
+}

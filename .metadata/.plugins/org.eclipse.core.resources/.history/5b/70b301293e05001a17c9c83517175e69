@@ -1,0 +1,39 @@
+package com.lti.dao;
+
+import java.util.List;
+
+import org.springframework.jdbc.core.JdbcTemplate;
+
+import com.lti.model.Employee;
+
+public class EmployeeDaoimpl implements EmployeeDao {
+	
+	private JdbcTemplate template = null;
+	
+	private static final String INSERT_EMP_RECORD = "Insert Into Emp(Emp_Id, Emp_Name, Emp_Sal) Values(Emp_EmpId.nextVal, ?, ?)";
+	
+	private static final String DELETE_EMP_RECORD = "Delete from Emp where Emp_Id=?";
+	
+	private static final String UPDATE_EMP_RECORD = "Update Emp Set Emp_Name=?, Emp_Sal=? Where Emp_Id=?";
+	
+	public int createEmployee(Employee employee) {
+		int result = template.update(INSERT_EMP_RECORD, employee.getEmployeeName(), employee.getEmployeeSalary());
+		return result;
+	}
+
+	public List<Employee> readAllEmployees() {
+		
+		return null;
+	}
+
+	public int deleteEmployee(int employeeId) {
+		int result = template.update(DELETE_EMP_RECORD, employeeId);
+		return result;
+	}
+
+	public Employee updateEmployee(Employee employee) {
+		int result = template.update(UPDATE_EMP_RECORD, employee.getEmployeeName(), employee.getEmployeeSalary(), employee.getEmployeeId());
+		return result;
+	}
+
+}

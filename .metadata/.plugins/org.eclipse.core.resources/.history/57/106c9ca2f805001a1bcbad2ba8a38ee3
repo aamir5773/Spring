@@ -1,0 +1,38 @@
+package com.lti.config;
+
+import javax.sql.DataSource;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.jdbc.core.JdbcTemplate;
+
+import com.lti.model.Employee;
+
+@Configuration
+@ComponentScan(basePackages={"com.lti"}) // Used to locate service and dao bean
+public class AppConfig {
+	
+	@Bean(name="employee")
+	public Employee getEmployee(){
+		Employee emp = new Employee();
+		return emp;
+	}
+	
+	@Bean
+	public JdbcTemplate getJdbcTemplate(){
+		JdbcTemplate template = new JdbcTemplate();
+		return template;
+	}
+	
+	
+	@Bean
+	public DataSource getDataSource(){
+		DriverManagerDataSource dataSource = new DriverManagerDataSource();
+        dataSource.setDriverClassName("");
+        dataSource.setUrl("");
+        dataSource.setUsername("");
+        dataSource.setPassword("");
+	}
+
+}

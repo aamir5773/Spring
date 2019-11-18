@@ -1,0 +1,12 @@
+package com.lti.ui;
+
+import com.lti.model.Employee;
+
+public class Main2 {
+
+	public static void main(String[] args) {
+		
+		Employee employee;
+	}
+
+}

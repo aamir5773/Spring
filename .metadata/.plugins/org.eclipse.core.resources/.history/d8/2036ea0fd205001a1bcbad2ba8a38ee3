@@ -1,0 +1,58 @@
+package com.lti.dao;
+
+import java.util.List;
+
+import org.springframework.jdbc.core.JdbcTemplate;
+
+import com.lti.model.Users;
+
+public class UserDaoImpl implements UserDao {
+	
+	private JdbcTemplate template = null;
+	
+	private static final String SELECT_USER_RECORD = "Select * From Users";
+	
+	public UserDaoImpl(){
+		
+	}
+	
+	public int readLogin(String username, String password){
+		
+		return 0;
+	}
+	public List<Users> readAllUsers(){
+		List<Users> list = getTemplate().query(SELECT_USER_RECORD, new UserRowMapper());
+		return null;
+		
+	}
+	public int deleteUser(String username){
+		return 0;
+	
+	}
+	public int createUser(Users user){
+		
+		return 0;
+		
+	}
+	public int updateUser(Users user) {
+		return 0;
+		
+	}
+	public JdbcTemplate getTemplate() {
+		return template;
+	}
+	public void setTemplate(JdbcTemplate template) {
+		this.template = template;
+	}
+}
+
+
+	
+	
+	
+	
+	
+	
+	
+
+

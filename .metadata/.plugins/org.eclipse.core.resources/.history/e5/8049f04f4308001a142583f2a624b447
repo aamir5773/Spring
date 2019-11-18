@@ -1,0 +1,6 @@
+package com.lti.controller;
+
+@RestController
+public class HelloController {
+
+}

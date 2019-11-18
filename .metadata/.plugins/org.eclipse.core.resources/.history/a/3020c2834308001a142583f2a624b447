@@ -1,0 +1,8 @@
+package com.lti.controller;
+
+@RestController
+public class HelloController {
+	public String hello(){
+		return "Hello from SpringRest";
+	}
+}

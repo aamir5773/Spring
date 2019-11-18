@@ -1,0 +1,35 @@
+package com.lti.service;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import com.lti.dao.EmployeeDao;
+import com.lti.model.Employee;
+
+public class EmployeeServiceImpl implements EmployeeService {
+
+	private EmployeeDao dao;
+	
+	
+	
+	
+	public EmployeeServiceImpl() {
+		employees = new ArrayList<>();
+}
+	public boolean addEmployee(Employee employee) {
+		return dao.createEmployee(employee);
+	}
+	public EmployeeDao getDao() {
+		return dao;
+	}
+	public void setDao(EmployeeDao dao) {
+		this.dao = dao;
+	}
+	
+	@Override
+	public List<Employee> findAllEmployees() {
+		return dao.readAllEmployees();
+	}
+	
+
+}

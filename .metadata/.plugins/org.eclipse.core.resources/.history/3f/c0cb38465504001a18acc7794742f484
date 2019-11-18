@@ -1,0 +1,25 @@
+package com.lti.dao;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import com.lti.model.Employee;
+
+public class EmployeeDaoImpl implements EmployeeDao {
+	private static List<Employee> employees;
+	
+	public EmployeeDaoImpl(){
+		employees = new ArrayList<>();
+	}
+
+	public boolean createEmployee(Employee employee) {
+		boolean result = ((List<Employee>) employee).add(employee);
+		return false;
+	}
+
+	@Override
+	public List<Employee> readAllEmployees() {
+		return employees;
+	}
+
+}

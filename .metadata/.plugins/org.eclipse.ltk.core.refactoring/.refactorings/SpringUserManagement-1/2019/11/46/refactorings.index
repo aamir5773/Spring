@@ -1,0 +1,8 @@
+1573619110867	Rename type 'UserDao'
+1573619269208	Rename type 'UserService'
+1573620353126	Encapsulate field 'template'
+1573622154301	Encapsulate field 'dao'
+1573629314817	Copy compilation unit
+1573629359894	Copy file
+1573629788443	Rename resource 'applicationContextWithAutowire.xml'
+1573629818489	Copy file

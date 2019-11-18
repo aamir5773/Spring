@@ -1,0 +1,12 @@
+package com.lti.service;
+
+import com.lti.model.Employee;
+
+public class EmployeeServiceImpl implements EmployeeService {
+
+	public boolean addEmployee(Employee employee) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}
